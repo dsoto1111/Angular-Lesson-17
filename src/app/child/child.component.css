@@ -1,0 +1,57 @@
+.setRow {
+  display: flex;
+  flex-direction: row;
+  height: 5vh; 
+  justify-content: space-between; 
+}
+
+.setRowTwo {
+  display: flex;
+  flex-direction: row;
+  height: 10vh; 
+  justify-content: space-between;     
+}
+
+.setAlignment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: .5em;
+}
+
+@container (min-width: 200px) {
+  .setAlignment {
+    font-size: 1em;
+  }
+}
+
+@keyframes animationExample {
+  from {color: black;}
+  to {color: yellow}
+}
+
+.changeColor { 
+  animation-name: animationExample;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+  width: 32%;
+  border-radius: 1vw 1vw 0px 0px; 
+  container-type: inline-size;
+  font-weight: bold;  
+  color: white;     
+}
+
+.itemTwo {
+  display: flex;
+  justify-content: center;
+  background-color: orange; 
+  width: 32%;  
+  border-radius: 0px 0px 1vw 1vw;     
+  container-type: inline-size;  
+}

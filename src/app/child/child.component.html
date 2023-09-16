@@ -1,0 +1,39 @@
+<div class="setRow">
+  <div class="item" [style]="'background-color: transparent'"><label>&nbsp;</label></div>
+  <div class="item" [style]="'background-color: transparent'"><label>&nbsp;</label></div>
+  <div class="item" [style]="'background-color: transparent'"><button (click)="switchArchetypes()">Healer/Rogue</button></div>
+</div>
+
+<div class="setRow">
+  <div class="item" [ngStyle]="colorChange"><div [ngClass]="multipleClassesOne"><label>Name:&nbsp;</label></div></div>
+  <div class="item"><div [ngClass]="multipleClassesTwo"><label>Age:&nbsp;</label></div></div>
+  <div class="item"><div [ngClass]="multipleClassesThree"><label>Archetype:&nbsp;</label></div></div>
+</div>
+<div class="setRowTwo">
+  <div class="itemTwo" [ngStyle]="styleChange"><div class="setAlignment"><p>{{ person.name }}</p></div></div>
+  <div class="itemTwo"><div class="setAlignment"><p>{{ person.age }}</p></div></div>
+  <div class="itemTwo"><div class="setAlignment"><p>{{ person.archetype }}</p></div></div>
+</div>
+<br>
+<br>
+<div [style.position]="position" [style.left.vw]="left">
+  <label [style]="'color: blue; text-decoration: underline; cursor: pointer'" (click)="showStrengths = !showStrengths">Strengths</label>
+  <div *ngIf="showStrengths then thenBlock; else standby"></div>
+  <ng-template #healer>
+      <ul>
+          <li>Medicine</li>
+          <li>Counseling</li> 
+          <li>Spell Casting</li>               
+      </ul>
+  </ng-template>
+  <ng-template #rogue>
+      <ul>
+          <li>Assassin</li>
+          <li>Outlaw</li> 
+          <li>Subtlety</li>               
+      </ul>
+  </ng-template>
+  <ng-template #standby>
+      <p>...</p>
+  </ng-template>
+</div>
